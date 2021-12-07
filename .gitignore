@@ -7,6 +7,9 @@
 # images
 /frontend/src/Images
 
+/ref.txt
+ref.txt
+
 # misc
 /backend/config
 .DS_Store
