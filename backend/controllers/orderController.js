@@ -24,9 +24,12 @@ const addOrderItems = asyncHandler(async (req, res) => {
             totalPrice
         })
         const createdOrder = await order.save()
-        res.status(201).json(createdOrder)
+        res.status(201).json({
+            order : createdOrder
+        })
     }
 })
+
 //desc get order by id
 //@route GET /api/orders/:id 
 //@access private
@@ -38,11 +41,30 @@ const getOrderById = asyncHandler(async (req, res) => {
     )
 
     if (order) {
-        res.json(order)
+        res.status(200).json({
+            order,
+        });
     } else {
         res.status(404)
         throw new Error('Order not found')
     }
-})
+});
 
-export { addOrderItems, getOrderById }
+//desc get all orders
+//@route GET /api/orders/allorders
+//@access private
+
+const getAllOrders = asyncHandler(async (req, res) => {
+    const orders = await Order.find();
+    if(orders) {
+        res.status(200).json({
+            length: orders.length,
+            orders: orders,
+        });
+    } else {
+        res.status(404)
+        throw new Error('Order not found')
+    }
+});
+
+export { addOrderItems, getOrderById, getAllOrders }
