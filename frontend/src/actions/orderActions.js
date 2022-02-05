@@ -43,7 +43,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
 
         dispatch({
             type: ORDER_CREATE_SUCCESS,
-            payload: data,
+            payload: data.order,
         })
         dispatch({
             type: CART_CLEAR_ITEMS,
@@ -85,7 +85,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
 
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
-            payload: data,
+            payload: data.order,
         })
     } catch (error) {
         const message =

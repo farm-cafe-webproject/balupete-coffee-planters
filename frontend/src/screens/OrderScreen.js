@@ -20,13 +20,11 @@ const OrderScreen = () => {
         dispatch(getOrderDetails(orderId))
     },[dispatch,params,orderId])
 
-    // useEffect(() => {
-    //     if(!order || order._id !== orderId) {
-    //         dispatch(getOrderDetails(orderId))
-    //     }
-    // }, [dispatch,order, orderId]) 
-
-    return loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message> : 
+    return loading ?( 
+        <Loader/> 
+    ) : error ? (
+        <Message variant='danger'>{error}</Message>
+    ) : (
     <>
         <h1>Order {order._id}</h1>
         <Row>
@@ -42,13 +40,13 @@ const OrderScreen = () => {
                         <ListGroup.Item>
                             <h2>Payment Method</h2>
                             <strong>Method: </strong>
-                            {order.paymentMethod}
+                            {order?.paymentMethod}
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <h2>Order Items</h2>
-                            {order.orderItems.length=== 0 ? <Message>Your order is Empty</Message>:(
+                            {order?.orderItems?.length=== 0 ? <Message>Your order is Empty</Message>:(
                             <ListGroup variant='flush'>
-                                {order.orderItems.map((item,index)=>(
+                                {order?.orderItems?.map((item,index)=>(
                                     <ListGroup.Item key={index}>
                                         <Row>
                                             <Col md={1}>
@@ -77,36 +75,35 @@ const OrderScreen = () => {
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Items</Col>
-                                    <Col>{order.itemsPrice}</Col>
+                                    <Col>{order?.itemsPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Shipping</Col>
-                                    <Col>{order.shippingPrice}</Col>
+                                    <Col>{order?.shippingPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Tax</Col>
-                                    <Col>{order.taxPrice}</Col>
+                                    <Col>{order?.taxPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
                                 <Row>
                                     <Col>Total</Col>
-                                    <Col>{order.totalPrice}</Col>
+                                    <Col>{order?.totalPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
                             
-
                             
                         </ListGroup>
                     </Card>
                 </Col>
             </Row>
-    </>
-    // );
+        </>
+    )
 }
 
 export default OrderScreen
