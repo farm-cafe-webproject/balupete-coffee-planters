@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-
-function App() {
-    return (
-        <div className="App">
-
-        </div>
-    );
-=======
 import React from 'react';
 import {Container} from 'react-bootstrap'
 import Header from './components/Header.js';
@@ -52,7 +43,7 @@ function App() {
       <Footer />
     </Router>
   );
->>>>>>> d7e603148707eb541af330235e5cf0b04d6f086f
+
 }
 
 export default App;
