@@ -1,27 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "balupetecoffeeplanters",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/index.js",
-    "dev": "nodemon backend/index.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.2.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.15",
-    "nodemon": "^2.0.15",
-    "react-alert-template-basic": "^1.0.2"
-=======
   "name": "proshop",
   "version": "1.0.0",
   "description": "MERN shopping cart app",
@@ -51,6 +28,5 @@
   "devDependencies": {
     "concurrently": "^6.4.0",
     "nodemon": "^2.0.15"
->>>>>>> d7e603148707eb541af330235e5cf0b04d6f086f
   }
 }

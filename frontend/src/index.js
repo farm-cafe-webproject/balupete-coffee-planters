@@ -1,28 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
-import './index.css';
-import App from './App';
-import { Provider } from "react-redux";
-import store from "./store.js";
-import { positions, transitions, Provider as AlertProvider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
-
-const options = {
-    timeout: 5000,
-    position: positions.BOTTOM_CENTER,
-    transition: transitions.SCALE,
-};
-
-ReactDOM.render(
-    <Provider store={store}>
-        <AlertProvider template={AlertTemplate} {...options}>
-            <App />
-        </AlertProvider>
-    </Provider>,
-    document.getElementById('root')
-);
-=======
 import './bootstrap.min.css';
 import {Provider} from 'react-redux'
 import store from './store.js'
@@ -40,4 +17,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
->>>>>>> d7e603148707eb541af330235e5cf0b04d6f086f
+
