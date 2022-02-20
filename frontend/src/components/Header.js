@@ -31,6 +31,7 @@ const Header = () => {
                             <Nav className="ml-auto">
                                 <LinkContainer to='/home'><Nav.Link><i className='fas fa-home'></i> Home</Nav.Link></LinkContainer>
                                 <LinkContainer to='/contact'><Nav.Link ><i className='fas fa-phone'></i> Contact</Nav.Link></LinkContainer>
+                                <LinkContainer to='/gallery'><Nav.Link ><i className='fas fa-image'></i> Gallery</Nav.Link></LinkContainer>
                                 <LinkContainer to='/aboutus'><Nav.Link ><i className='fas fa-info'></i> About Us</Nav.Link></LinkContainer>
                                 <LinkContainer to='/cart'><Nav.Link ><i className='fas fa-shopping-cart'></i> Cart</Nav.Link></LinkContainer>
                                 {userInfo ? (

@@ -53,7 +53,7 @@ const CartScreen = () => {
         subQty += Number(item.qty);
     })
 
-    console.log(subQty);
+    
 
     return (
         <Row>

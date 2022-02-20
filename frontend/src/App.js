@@ -15,6 +15,7 @@ import PaymentScreen from './screens/PaymentScreen.js'
 import PlaceOrderScreen from './screens/PlaceOrderScreen.js'
 import OrderScreen from './screens/OrderScreen.js'
 import OrderListScreen from './screens/OrdersListScreen.js';
+import GalleryScreen from './screens/GalleryScreen.js'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path='/home' element={<Homescreen/>}/> 
             <Route path='/contact' element={<ContactScreen/>}/>
+            <Route path='/gallery' element={<GalleryScreen/>}/>
             <Route path='/login' element={<LoginScreen/>}/>
             <Route path='/register' element={<RegisterScreen/>}/>
             <Route path='/shipping' element={<ShippingScreen/>}/>
