@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # testing
 /coverage
 
@@ -12,6 +13,22 @@ ref.txt
 
 # misc
 /backend/config
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+node_modules/
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+
+
+# misc
+>>>>>>> d7e603148707eb541af330235e5cf0b04d6f086f
 .DS_Store
 .env
 .env.local
@@ -19,6 +36,7 @@ ref.txt
 .env.test.local
 .env.production.local
 
+<<<<<<< HEAD
 .vscode/settings.json
 frontend/src/components/Cart/Payment.js
 
@@ -45,3 +63,9 @@ frontend/src/components/Cart/Payment.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/settings.json
+>>>>>>> d7e603148707eb541af330235e5cf0b04d6f086f
