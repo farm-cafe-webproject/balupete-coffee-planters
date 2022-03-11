@@ -6,6 +6,8 @@ import {Form,Button,Row,Col} from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import  FormContainer from '../components/FormContainer'
+import Image from 'react-bootstrap/Image'
+
 
 const RegisterScreen = () => {
     const [email,setEmail] = useState('');
@@ -34,7 +36,16 @@ const RegisterScreen = () => {
     }
     
     return (
-        <FormContainer>
+        <Row>
+            <Col md={4}>
+            <Image
+            src=
+            "https://brown-bean-images.netlify.app/gallerypics/signup.png"
+                rounded fluid
+            />
+            </Col>
+            <Col md={8}>
+            <FormContainer>
             <h1>Sign Up</h1>
             {message && <Message variant='danger'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
@@ -56,7 +67,7 @@ const RegisterScreen = () => {
                     <Form.Label> Confirm Password</Form.Label>
                     <Form.Control type='password' placeholder='Enter Confirm Password' value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
-                <Button type='submit' variant='primary'>Register</Button>
+                <Button className='my-3' type='submit' variant='primary'>Register</Button>
             </Form>
             <Row className='py-3'>
                 <Col>
@@ -67,6 +78,8 @@ const RegisterScreen = () => {
                 </Col>
             </Row>
         </FormContainer>
+            </Col>
+        </Row>
     )
 }
 

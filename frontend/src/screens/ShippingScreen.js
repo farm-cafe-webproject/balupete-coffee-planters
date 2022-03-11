@@ -46,7 +46,7 @@ const ShippingScreen = () => {
                     <Form.Label>Country</Form.Label>
                     <Form.Control type='country' placeholder='Enter country' value={country} required onChange={(e)=>setCountry(e.target.value)}></Form.Control>
                 </Form.Group>
-                <Button type='submit' variant='primary'>
+                <Button className='my-3' type='submit' variant='primary'>
                     Continue
                 </Button>
 

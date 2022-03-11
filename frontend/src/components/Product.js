@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import products from "../products.js";
+
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 

@@ -1,7 +1,7 @@
 {
-  "name": "proshop",
+  "name": "BrownBeanCoffee",
   "version": "1.0.0",
-  "description": "MERN shopping cart app",
+  "description": "Coffee selling service",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -15,6 +15,7 @@
   "author": "mahesh",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.0",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "dotenv": "^10.0.0",

@@ -50,23 +50,6 @@ const getOrderById = asyncHandler(async (req, res) => {
     }
 });
 
-//desc get all orders
-//@route GET /api/orders/allorders
-//@access private
-
-const getAllOrders = asyncHandler(async (req, res) => {
-    const orders = await Order.find();
-    if(orders) {
-        res.status(200).json({
-            length: orders.length,
-            orders: orders,
-        });
-    } else {
-        res.status(404)
-        throw new Error('Order not found')
-    }
-});
-
 const updateOrderToPaid = asyncHandler(async(req,res)=>{
     const order = await Order.findById(req.params.id)
 
@@ -90,12 +73,46 @@ const updateOrderToPaid = asyncHandler(async(req,res)=>{
     }
 })
 
-//@desc get logged in user orders
-//@2route GET /api/orders/myorders
-const getMyOrders = asyncHandler(async(req,res)=>{
-    const orders = await Order.find({user:req.user._id})
+// @desc    Get logged in user orders
+// @route   GET /api/orders/myorders
+// @access  Private
+const getMyOrders = asyncHandler(async (req, res) => {
+    const orders = await Order.find({ user: req.user._id })
     res.json(orders)
-    
 })
 
-export { addOrderItems, getOrderById, getAllOrders, updateOrderToPaid, getMyOrders }
+// @desc    Get all orders
+// @route   GET /api/orders
+// @access  Private/Admin
+const getOrders = asyncHandler(async (req, res) => {
+    const orders = await Order.find({}).populate('user','id name')
+    res.json(orders)
+})
+
+// @desc    Update order to delivered
+// @route   GET /api/orders/:id/deliver
+// @access  Private/Admin
+const updateOrderToDelivered = asyncHandler(async(req,res)=>{
+    const order = await Order.findById(req.params.id)
+
+    if(order){
+        order.isDelivered = true
+        order.deliveredAt = Date.now()
+        
+
+        const updatedOrder = await order.save()
+
+        res.json(updatedOrder)
+
+    }else{
+        res.status(404)
+        throw new Errror("Order not Found")
+    }
+})
+
+export {addOrderItems, 
+        getOrderById, 
+        updateOrderToPaid, 
+        getMyOrders,
+        getOrders,
+        updateOrderToDelivered}

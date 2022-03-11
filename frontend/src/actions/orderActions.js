@@ -66,10 +66,10 @@ export const createOrder = (order) => async (dispatch, getState) => {
 }
 
 export const getOrderDetails = (id) => async (dispatch, getState) => {
-    try { 
+    try {
         dispatch({
             type: ORDER_DETAILS_REQUEST,
-        }) 
+        })
 
         const {
             userLogin: { userInfo },
@@ -86,7 +86,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
 
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
-            payload: data.order, 
+            payload: data.order,
         })
     } catch (error) {
         const message =
@@ -227,6 +227,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
     }
 }
 
+
 export const listOrders = () => async (dispatch, getState) => {
     try {
         dispatch({
@@ -243,20 +244,18 @@ export const listOrders = () => async (dispatch, getState) => {
             },
         }
 
-        const { data } = await axios.get(`/api/orders/allorders`, config)
+        const { data } = await axios.get(`/api/orders`, config)
 
         dispatch({
             type: ORDER_LIST_SUCCESS,
-            payload: data.orders,
+            payload: data,
         })
     } catch (error) {
         const message =
             error.response && error.response.data.message
                 ? error.response.data.message
                 : error.message
-        if (message === 'Not authorized, token failed') {
-            dispatch(logout())
-        }
+        
         dispatch({
             type: ORDER_LIST_FAIL,
             payload: message,

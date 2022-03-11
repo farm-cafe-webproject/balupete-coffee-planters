@@ -14,8 +14,13 @@ import ShippingScreen from './screens/ShippingScreen.js'
 import PaymentScreen from './screens/PaymentScreen.js'
 import PlaceOrderScreen from './screens/PlaceOrderScreen.js'
 import OrderScreen from './screens/OrderScreen.js'
-import OrderListScreen from './screens/OrdersListScreen.js';
 import GalleryScreen from './screens/GalleryScreen.js'
+import LandingScreen from './screens/LandingScreen.js'
+import UserListScreen from './screens/UserListScreen.js'
+import ProductListScreen from './screens/ProductListScreen.js'
+import OrderListScreen from './screens/OrderListScreen.js'
+import UserEditScreen from './screens/UserEditScreen.js'
+import ProductEditScreen from './screens/ProductEditScreen.js'
 
 function App() {
   return (
@@ -24,7 +29,14 @@ function App() {
       <main className="py-3">
         <Container>
           <Routes>
+            <Route path='/' element={<LandingScreen/>}/> 
+            <Route path='/admin/userlist' element={<UserListScreen/>}/> 
+            <Route path='/admin/productlist' element={<ProductListScreen/>}/> 
+            <Route path='/admin/orderlist' element={<OrderListScreen/>}/> 
+            <Route path='/admin/user/:id/edit' element={<UserEditScreen/>}/> 
+            <Route path='/admin/product/:id/edit' element={<ProductEditScreen/>}/> 
             <Route path='/home' element={<Homescreen/>}/> 
+            <Route path='/search/:keyword' element={<Homescreen/>}/> 
             <Route path='/contact' element={<ContactScreen/>}/>
             <Route path='/gallery' element={<GalleryScreen/>}/>
             <Route path='/login' element={<LoginScreen/>}/>

@@ -6,16 +6,12 @@ const GalleryScreen = () => {
     return( 
     <div>
         
-        <h2>Here are some of the coffee farm pics from Sakleshpura</h2>
+        <h2>Here are some of the coffee farm pictures from Sakleshpura</h2>
         <Row>
             <Col sm={12} md={6} lg={8} xl={3}>
                 <Card className="my-3 p-3 rounded">
                     <Card.Img src="https://brown-bean-images.netlify.app/gallerypics/1.png" width="150px" height="150px"/>
-                    <Card.Body>
-                        <Card.Title as="div">
-                            <strong>Mahesh</strong> 
-                        </Card.Title>
-                    </Card.Body>
+                    
                 </Card>
             </Col>
             <Col sm={12} md={6} lg={8} xl={3}>
