@@ -32,11 +32,14 @@ function App() {
             <Route path='/' element={<LandingScreen/>}/> 
             <Route path='/admin/userlist' element={<UserListScreen/>}/> 
             <Route path='/admin/productlist' element={<ProductListScreen/>}/> 
+            <Route path='/admin/productlist/:pageNumber' element={<ProductListScreen/>}/> 
             <Route path='/admin/orderlist' element={<OrderListScreen/>}/> 
             <Route path='/admin/user/:id/edit' element={<UserEditScreen/>}/> 
             <Route path='/admin/product/:id/edit' element={<ProductEditScreen/>}/> 
             <Route path='/home' element={<Homescreen/>}/> 
             <Route path='/search/:keyword' element={<Homescreen/>}/> 
+            <Route path='/page/:pageNumber' element={<Homescreen/>}/> 
+            <Route path='/search/:keyword/page/:pageNumber' element={<Homescreen/>}/> 
             <Route path='/contact' element={<ContactScreen/>}/>
             <Route path='/gallery' element={<GalleryScreen/>}/>
             <Route path='/login' element={<LoginScreen/>}/>

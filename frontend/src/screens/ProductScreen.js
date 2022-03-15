@@ -11,6 +11,7 @@ import {
 } from '../actions/productActions.js'
 import { addToCart } from '../actions/cartActions.js'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants.js'
+import Meta from "../components/Meta";
 
 
 const ProductScreen = () => {
@@ -60,6 +61,7 @@ const ProductScreen = () => {
             </Link>
             {loading ? (<Loader />) : error ? (<Message variant='danger'>{error}</Message>) : (
                 <>
+                <Meta title={product.name}/>
                     <Row>
                         <Col md={6}>
                             <Image src={product.image} alt={product.name} fluid />

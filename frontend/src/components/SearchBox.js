@@ -16,15 +16,18 @@ const submitHandler = (e)=>{
 }
 
     return (
-        <Form onSubmit={submitHandler} inline>
+        <Form onSubmit={submitHandler} inline style={{display:'flex'}}>
             <Form.Control
                 type='text'
                 name='q'
                 onChange={(e)=>setKeyword(e.target.value)}
                 className='mr-sm-2 ml-sm-5'
-                placeholder='Search Products'>
+                placeholder='Search Products...'>
             </Form.Control>
-            <Button type='submit' variant='outline-success' className='p-2'>Search</Button>
+            <Button 
+                type='submit' 
+                variant='outline-success' 
+                className='p-2 mx-2'>Search</Button>
         </Form>
     )
 }

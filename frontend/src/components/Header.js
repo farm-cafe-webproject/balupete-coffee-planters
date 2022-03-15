@@ -3,12 +3,14 @@ import { useDispatch,useSelector} from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Container,Navbar,Nav, NavDropdown } from 'react-bootstrap'
 import {logout} from '../actions/userActions'
-
+import SearchBox from './SearchBox'
+import {useNavigate} from 'react-router-dom'
 
 const Header = () => {
     const userLogin = useSelector(state => state.userLogin);
     const {userInfo} = userLogin;
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const logoutHandler = ()=>{
         dispatch(logout());
@@ -24,7 +26,7 @@ const Header = () => {
                     color: 'white'
                 }}> 
                     <div>
-                        <span class="logo">
+                        <span className="logo">
                     <a href="/"> 
                         <img src="https://brown-bean-images.netlify.app/gallerypics/logo.png" height="50" width="120" alt="" /></a>
                     </span>
@@ -32,9 +34,11 @@ const Header = () => {
                         <Navbar.Brand>BROWN BEAN COFFEE</Navbar.Brand>
                         </LinkContainer>
                     </div>
+                    
                     <div>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
+                            <SearchBox navigate={navigate}/>
                             
                             <Nav className="ml">
                                 <LinkContainer to='/home'><Nav.Link><i className='fas fa-home'></i> Home</Nav.Link></LinkContainer>

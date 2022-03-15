@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { useNavigate} from 'react-router-dom'
+import { useNavigate,useParams} from 'react-router-dom'
 import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
+import Paginate from '../components/Paginate'
 import {
     listProducts,
     deleteProduct,
@@ -15,10 +16,12 @@ import {PRODUCT_CREATE_RESET} from '../constants/productConstants'
 const ProductListScreen = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const params = useParams()
     
+    const pageNumber = params.pageNumber || 1
 
     const productList = useSelector(state => state.productList)
-    const { products, loading, error } = productList
+    const { products, loading, error,page,pages } = productList
 
     const productDelete = useSelector(state => state.productDelete)
     const { success: successDelete, loading: loadingDelete, error: errorDelete } = productDelete
@@ -41,9 +44,9 @@ const ProductListScreen = () => {
         if(successCreate){
             navigate(`/admin/product/${createdProduct._id}/edit`)
         }else{
-            dispatch(listProducts())
+            dispatch(listProducts('',pageNumber))
         }
-    }, [dispatch,successDelete, userInfo,successCreate,createProduct])
+    }, [dispatch,successDelete, userInfo,successCreate,createProduct,pageNumber])
 
     const deleteHandler = (id) => {
         if (window.confirm("Are you sure?")) {
@@ -72,6 +75,7 @@ const ProductListScreen = () => {
             {loadingCreate && <Loader />}
             {errorCreate && <Message variant='danger'>{errorCreate}</Message>}
             {loading ? <Loader /> : error ? <Message variant="danger">{error}</Message> : (
+                <>
                 <Table striped bordered hover responsive className='table-sm'>
                     <thead>
                         <tr>
@@ -109,6 +113,8 @@ const ProductListScreen = () => {
                         ))}
                     </tbody>
                 </Table>
+                <Paginate pages={pages} page={page} isAdmin={true} />
+                </>
             )}
         </>
     )
