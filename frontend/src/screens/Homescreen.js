@@ -7,9 +7,9 @@ import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
 import Message from '../components/Message'
 import { useParams } from 'react-router-dom'
-import ProductCarousel from '../components/ProductCarousel.js'
+// import ProductCarousel from '../components/ProductCarousel.js'
 import Meta from '../components/Meta.js'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 const Homescreen = () => {
     

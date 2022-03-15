@@ -56,7 +56,7 @@ const ProductScreen = () => {
 
     return (
         <>
-            <Link className="btn btn-dark my-3" to="/">
+            <Link className="btn btn-dark my-3" to="/home">
                 Go back
             </Link>
             {loading ? (<Loader />) : error ? (<Message variant='danger'>{error}</Message>) : (

@@ -5,17 +5,16 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 const LandingScreen = () => {
     return (
-        <div className="container">
+        <div className="container ">
             <Card className="bg-dark text-center" >
-                <Card.Img src="https://images.pexels.com/photos/2316554/pexels-photo-2316554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Card image" />
-                <Card.ImgOverlay>
+                <Card.Img src="https://brown-bean-images.netlify.app/gallerypics/coffeebg.jpg" alt="Card image" />
+                <Card.ImgOverlay className="position-absolute top-50 start-0">
                     <Card.Title style={{ color: "black", fontWeight: "bold" }}><h1><strong>welcome to BrownBeanCoffee</strong></h1></Card.Title>
                     <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.
+                    Science may never come up with a better office communication system than the coffee break
                     </Card.Text>
-                    <Card.Text>Last updated 3 mins ago</Card.Text>
-                    <div className="position-absolute top-50 start-50">
+                    <Card.Text>A bad day with coffee is better than a good day without it</Card.Text>
+                    <div >
                         <LinkContainer to="/home" >
                             <Button variant="primary" size="lg">
                                 Go to Products
