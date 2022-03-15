@@ -41,5 +41,11 @@ app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000;
 
+app.use(express.static(path.join(__dirname,'../frontend/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname,'../frontend/build'));
+});
+
 
 app.listen(PORT,console.log(`server started on ${process.env.NODE_ENV} port ${PORT}`));
