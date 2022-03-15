@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react' 
+import React, {useEffect, Fragment } from 'react' 
 import { Row, Col } from 'react-bootstrap'
 import {useDispatch,useSelector} from 'react-redux'
 import {listProducts} from '../actions/productActions.js'
@@ -28,23 +28,22 @@ const Homescreen = () => {
     
     return (
         <>
-        <Meta/>
-        {/* {!keyword ? (<ProductCarousel/>) : ( <Link to='/home' className='btn btn-light' > Go Back<Link/>)} */}
+            <Meta/>
+            {/* <ProductCarousel /> */}
+            {/* {!keyword ? (<ProductCarousel/>) : ( <Link to='/home' className='btn btn-light'>Go Back<Link/>)} */}
             <h1>Our Latest Products</h1>
             {loading ? (<Loader/>) :error ? (<Message variant ='danger'>{error}</Message>) : (
                 <>
-                <Row>
-                    {products.map((product) => ( 
-                        <Col sm={12} md={6} lg={8} xl={3}>
-                            <Product product={product} />
-                        </Col>
-                    ))}
-                </Row>
-                <Paginate page={page} pages={pages} keyword={keyword ? keyword :''} />
+                    <Row>
+                        {products.map((product) => ( 
+                            <Col sm={12} md={6} lg={8} xl={3}>
+                                <Product product={product} />
+                            </Col>
+                        ))}
+                    </Row>
+                    <Paginate page={page} pages={pages} keyword={keyword ? keyword :''} />
                 </>
             )}
-            
-
         </>
     )
 }
