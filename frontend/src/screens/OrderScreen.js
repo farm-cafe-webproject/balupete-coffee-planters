@@ -170,7 +170,7 @@ const OrderScreen = () => {
                                     )}
                                 </ListGroup.Item>
                             ):(
-                                <h2><strong>Successfully Paid</strong></h2>
+                                <h2><strong> Successfully Paid </strong></h2>
                             )}
                             {loadingDeliver && <Loader/>}
                             {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (

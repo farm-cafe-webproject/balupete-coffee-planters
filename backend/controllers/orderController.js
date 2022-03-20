@@ -1,5 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
+import sendEmail from '../utils/sendEmail.js';
+
 
 //desc create new order
 //@route POST /api/orders 
@@ -23,6 +25,13 @@ const addOrderItems = asyncHandler(async (req, res) => {
             shippingPrice,
             totalPrice
         })
+        const message = `BrownBean Coffee,says Hello, Your order ${orderItems.name} is on processing :-\n\n TotalPrice=${totalPrice} please complete the payment to get futher details`;
+        await sendEmail({
+			email: req.user.email,
+			subject: `Order Placed Successfully`,
+            
+			message,
+		});
         const createdOrder = await order.save()
         res.status(201).json({
             order : createdOrder

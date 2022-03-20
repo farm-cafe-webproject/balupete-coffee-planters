@@ -6,7 +6,7 @@ const GalleryScreen = () => {
     return( 
     <div>
         
-        <h2>Here are some of the coffee farm pictures from Sakleshpura</h2>
+        <h2><strong>Here are some of the coffee farm pictures from Sakleshpura</strong></h2>
         <Row>
             <Col sm={12} md={6} lg={8} xl={3}>
                 <Card className="my-3 p-3 rounded">

@@ -21,7 +21,7 @@ router
     .put(protect,admin,updateProduct)
 router
     .route('/:id/reviews')
-    .post(protect,admin,createProductReview)
+    .post(protect,createProductReview)
 router
     .get('/top',getTopProducts)
 
